@@ -1,0 +1,11 @@
+使用前需要的操作说明：
+
+1、创建一个名为 tp 的文件夹，将项目下的所有文件拉到创建的tp文件夹中，再将文件夹移到 www 目录下。
+
+2、将项目根目录下的  ueditor   文件夹拉到 www 目录下，才能在访问网站是能正常显示文章在列表上的缩略图。
+
+3、前台网站的首页的url地址为：localhost/tp/public/index/index/index.html,
+后台网站管理系统的url地址为：lolcahost/tp/public/admin/login/index.html,
+管理员账号：ZGWEI，密码：123
+
+以上不同的服务器配置可能路径不同

@@ -1,44 +1,92 @@
-            <div class="right">
-                <!--右侧各种广告-->
-                <!--猜你喜欢-->
-<div id="hm_t_57953"><div style="display: block; margin: 0px; padding: 0px; float: none; clear: none; overflow: hidden; position: relative; border: 0px none; background: transparent none repeat scroll 0% 0%; max-width: none; max-height: none; border-radius: 0px; box-shadow: none; transition: none 0s ease 0s ; text-align: left; box-sizing: content-box; width: 300px;">
-<div class="hm-t-container" style="width: 298px;"><div class="hm-t-main"><div class="hm-t-header">热门点击</div><div class="hm-t-body"><ul class="hm-t-list hm-t-list-img">
-{volist name="hotClick" id="vo"}
-<li class="hm-t-item hm-t-item-img"><a data-pos="0" title="{$vo.title}" target="_self" href="{:url('Article/index', array('articleid' => $vo.id))}" class="hm-t-img-title" style="visibility: visible;"><span>{$vo.title}</span></a></li>
-{/volist}
-</ul>
-</div></div></div>
+      <aside>
 
-</div></div>
-<div style="height:15px"></div>
-<div id="hm_t_57953"><div style="display: block; margin: 0px; padding: 0px; float: none; clear: none; overflow: hidden; position: relative; border: 0px none; background: transparent none repeat scroll 0% 0%; max-width: none; max-height: none; border-radius: 0px; box-shadow: none; transition: none 0s ease 0s ; text-align: left; box-sizing: content-box; width: 300px;">
-<div style="width: 298px;" class="hm-t-container"><div class="hm-t-main"><div class="hm-t-header">推荐阅读</div><div class="hm-t-body"><ul class="hm-t-list hm-t-list-img">
-{volist name="hotCommend" id="vo"}
-<li class="hm-t-item hm-t-item-img"><a style="visibility: visible;" class="hm-t-img-title" href="{:url('Article/index', array('articleid' => $vo.id))}" target="_self" title="{$vo.title}" data-pos="0"><span>{$vo.title}</span></a></li>
-{/volist}
-</ul>
-</div></div></div>
+	   <div id="wrapper">
 
-</div></div>
-<div style="height:15px"></div>
-<div id="bdcs"><div class="bdcs-container"><meta content="IE=9" http-equiv="x-ua-compatible">   <!-- 嵌入式 --> 	<div id="default-searchbox" class="bdcs-main bdcs-clearfix">      
-		<div id="bdcs-search-inline" class="bdcs-search bdcs-clearfix">          
-			<form id="bdcs-search-form" autocomplete="off" class="bdcs-search-form" target="_self" method="get" action="{:url('Search/index')}">              
-		   		 <input type="text" placeholder="请输入关键词" id="bdcs-search-form-input" class="bdcs-search-form-input" name="keywords" autocomplete="off" style="line-height: 30px; width:220px;">
-		    	<input type="submit" value="搜索" id="bdcs-search-form-submit" class="bdcs-search-form-submit bdcs-search-form-submit-magnifier">                       
-		    </form>      
-		</div>               
-	 	<div id="bdcs-search-sug" class="bdcs-search-sug" style="top: 552px; width: 239px;">             
-	  		<ul id="bdcs-search-sug-list" class="bdcs-search-sug-list"></ul>       
-	    </div>                 
-	     </div>                      
+		<div id="back">
+	         <div id="upperHalfBack">
+	         		<img src="__STYLE__/images/spacer.png" /><img id="hoursUpBack" src="__STYLE__/images/Single/Up/AM/0.png"/>
+	                <img id="minutesUpLeftBack" src="__STYLE__/images/Double/Up/Left/0.png" class="asd" /><img id="minutesUpRightBack" src="__STYLE__/images/Double/Up/Right/0.png"/>
+	                <img id="secondsUpLeftBack" src="__STYLE__/images/Double/Up/Left/0.png" /><img id="secondsUpRightBack" src="__STYLE__/images/Double/Up/Right/0.png"/>
+	         </div>
+	         <div id="lowerHalfBack">
+	         		<img src="__STYLE__/images/spacer.png" /><img id="hoursDownBack" src="__STYLE__/images/Single/Down/AM/0.png" />
+	               <img id="minutesDownLeftBack" src="__STYLE__/images/Double/Down/Left/0.png" /><img id="minutesDownRightBack" src="__STYLE__/images/Double/Down/Right/0.png" />
+	               <img id="secondsDownLeftBack" src="__STYLE__/images/Double/Down/Left/0.png" /><img id="secondsDownRightBack" src="__STYLE__/images/Double/Down/Right/0.png" />
+	         </div>
+		</div>
+	    
+	    
+	    <div id="front">
+	         <div id="upperHalf">
+	         		<img src="__STYLE__/images/spacer.png" /><img id="hoursUp" src="__STYLE__/images/Single/Up/AM/0.png"/>
+	                <img id="minutesUpLeft" src="__STYLE__/images/Double/Up/Left/0.png" /><img id="minutesUpRight" src="__STYLE__/images/Double/Up/Right/0.png"/>
+	                <img id="secondsUpLeft" src="__STYLE__/images/Double/Up/Left/0.png" /><img id="secondsUpRight" src="__STYLE__/images/Double/Up/Right/0.png"/>
+	         </div>
+	         <div id="lowerHalf">
+	         		<img src="__STYLE__/images/spacer.png" /><img id="hoursDown" src="__STYLE__/images/Single/Down/AM/0.png"/>
+	               <img id="minutesDownLeft" src="__STYLE__/images/Double/Down/Left/0.png" /><img id="minutesDownRight" src="__STYLE__/images/Double/Down/Right/0.png" />
+	               <img id="secondsDownLeft" src="__STYLE__/images/Double/Down/Left/0.png" /><img id="secondsDownRight" src="__STYLE__/images/Double/Down/Right/0.png" />
+	         </div>
+		</div>   
 	</div>
-</div>
 
-<div style="height:15px"></div>
+<div class="self">
+        <figure><img src="__STYLE__/images/007.jpg"></figure>
+     
 
+      </div>
 
-                
-            </div>
-    
-</div>
+    <div class="topspaceinfo">
+      <div class="rnav about_c">
+      <p>网名：~~kong||白</p>
+      <p>职业：学生、网页开发 </p>
+      <p>现居：广东省—汕头市</p>
+      <p>电话：15919286310</p>
+      <p>邮箱：839319250@qq.com</p>
+    </div>
+    </div>
+    <div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a><a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a><a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"></a><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+    </div>
+    <div class="tj_news">
+      <h2>
+        <p class="tj_t1">热门文章</p>
+      </h2>
+      <ul class="ph_n">
+      {volist name="hotClick" id="vo"}
+        <li><span class="num{$i}">{$i}</span><a href="{:url('Article/index', array('articleid' => $vo.id))}">{$vo.title}</a></li>
+      {/volist}
+      </ul>
+      <h2>
+        <p class="tj_t2">推荐文章</p>
+      </h2>
+      <ul class="ph_m">
+      {volist name="hotCommend" id="vo"}
+        <li><a href="{:url('Article/index', array('articleid' => $vo.id))}">{$vo.title}</a></li>
+      {/volist}
+      </ul>
+    </div>
+    <div class="links link11">
+      <h2>
+        <p>站内搜索</p>
+      </h2>
+      <div class="wrapper-green">
+      	<div onclick="click11()" class="searchMeme-button-right  searchMeme-round-right green-hover">
+      		<div class="searchMeme-button-icon searchMeme-button-inner"></div>
+      	</div> 
+      	<div class="searchMeme-input-right">
+      		<input onkeypress="if (event.keyCode == 13){ click11();}" type="text" id="search-green" placeholder="请输入关键字" class="searchMeme-water-mark" style="margin-left: 0px; padding-left: 11px; padding-right: 11px;">
+      	</div>
+      	<div style="clear:both;"></div>
+      </div>
+    </div>
+    <div class="links">
+      <h2>
+        <p>友情链接</p>
+      </h2>
+      <ul>
+      	{volist name="links" id="vo"}
+        	<li><a href="{$vo.url}" target="_blank">{$vo.title}</a></li>
+        {/volist}
+      </ul>
+    </div>
+  </aside>

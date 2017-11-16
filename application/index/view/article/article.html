@@ -1,97 +1,219 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <title>童老师ThinkPHP交流群：484519446</title>
-        <meta name="keywords" content="童老师ThinkPHP交流群：484519446" />
-        <meta name="description" content="童老师ThinkPHP交流群：484519446" />
-        <meta name="mobile-agent" content="format=html5; url=http://m.zx.wed114.cn/shenghuo/20160920156214.html" />
-        <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7">
-		<link href="__STYLE__/style/lady.css" type="text/css" rel="stylesheet" />
-		<script type='text/javascript' src='__STYLE__/style/ismobile.js'></script>
-    </head>
-
-    <body>
-
-        {include file="common/header"/}
-
-        <!--顶部通栏-->
-        <script src='/jiehun/goto/my-65547.js' language='javascript'></script>
-
-        <div class="position"><a href='{:url("Index/index")}'>主页</a> > <a href='{:url("Cate/index", array("cateid" => $cate.id))}'>{$cate.catename}</a> >  </div>
-
-        <div class="overall">
-            <div class="left">
-                <div class="scrap">
-                    <h1>{$article.title}</h1>
-                    <div class="spread">
-                        <span class="writor">发布时间：{$article.time|date="Y-m-d H:i:s",###}</span>
-                        <span class="writor">编辑：{$article.author}</span>
-                        <span class="writor">标签：
-                            <?php
-                                $arr = explode(",",$article['keywords']);
-                                foreach($arr as $key=>$value){
-                                    echo "<a href='".url('Search/index',array('keywords' => $value))."'>".$value."</a>";
-                                }
-                            ?>
-                        </span>
-                        <span class="writor">热度：<script src="/jiehun/plus/count.php?view=yes&aid=156214&mid=55" type='text/javascript' language="javascript"></script>{$article.click}</span>
-                    </div>
-                </div>
-
-                <!--百度分享-->
-                <script src='/jiehun/goto/my-65542.js' language='javascript'></script>
-
-                <div class="takeaway">
-                    <span class="btn arr-left"></span>
-                    <p class="jjxq">{$article.synopsis}
-</p>
-                    <span class="btn arr-right"></span>
-                </div>
-
-                  <script src='/jiehun/goto/my-65541.js' language='javascript'></script>
-
-                <div class="substance">{$article.content}</div>
-
-
-                <div class="biaoqian">
-                   
-                </div>
-
-
-
-                <!--相关阅读 -->
-                {if condition="$relates neq null"}
-                <div class="xgread">
-                    <div class="til"><h4>相关阅读</h4></div>
-                    <div class="lef"><!--相关阅读主题链接--><script src='/jiehun/goto/my-65540.js' language='javascript'></script></div>
-                    <div class="rig">
-                        <ul>
-                            {volist name="relates" id="vo"}
-                                <li><a href='{:url("Article/index", array("articleid" => $vo.id))}' target="_self">{$vo.title}</a></li>
-                            {/volist}        
-                        </ul>
-                    </div>
-                </div>
-                {/if}
-                <!--频道推荐-->
-                <div class="hotsnew">
-                    <div class="til"><h4>频道推荐</h4></div>
-                    <ul>
-                    {volist name="commendArticle" id="vo"}
-                        <li><div class="tu"><a href='{:url("Article/index",array("articleid" => $vo.id))}' target="_self"><img src='{if condition="$vo.pic neq ''"}__UPLOADS__/{$vo.pic}{else/}
-                        __STYLE__/images/error.png{/if}' alt="{$vo.title}"/></a></div><p><a href='{:url("Article/index",array("articleid" => $vo.id))}'>{$vo.title}</a></p></li>
-                    {/volist}
-                    
-                    </ul>
-                </div>		
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>伟·编程记录</title>
+<meta name="keywords" content="伟·编程记录，个人博客" />
+<meta name="description" content="伟的编程记录，记录个人学习编程的过程、总结" />
+<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
+<link href="__STYLE__/style/base.css" rel="stylesheet">
+<link href="__STYLE__/style/index.css" rel="stylesheet">
+<link href="__STYLE__/style/style.css" rel="stylesheet">
+</head>
+<body>
+<div class="ibody">
+  {include file="common/header" /}
+  <article>
+    <h2 class="about_h">您现在的位置是：<a href="{:url('Index/index')}">首页</a>><a href="{:url('Cate/index', array('cateid' => $cate.id))}">{$cate.catename}</a>></h2>
+    <div class="index_about">
+      <h2 class="c_titile">{$article.title}</h2>
+      <p class="box_c"><span class="d_time">发布时间：{neq name="article.time" value=""}{$article.time|date="Y-m-d",###}{else/}暂无{/neq}</span><span>编辑：{neq name="article.author" value=""}{$article.author}{else/}暂无{/neq}</span><span>浏览（{$article.click}）</span><span>评论览（{$comment|count}）</span></p>
+       <div class="takeaway">
+             <span class="btn arr-left"></span>
+             <p class="jjxq">{neq name="article.synopsis" value=""}{$article.synopsis}{else/}暂无简介{/neq}</p>
+             <span class="btn arr-right"></span>
+        </div>
+      <ul class="infos">
+        {$article.content}
+      </ul>
+      <div class="keybq">
+        <p>
+            <span>关键字词</span>：
+            {volist name="keywords" id="keyword" empty="暂无关键词"}
+            {neq name="i-1" value="0"},{/neq}<a href="{:url('Search/index', array('keywords' => $keyword))}">{$keyword}</a> 
+            {/volist}
+        </p>
+      </div>
+      <div class="nextinfo">
+      {if condition="$nextArticle neq null"}
+        <p>上一篇：<a href="{:url('Article/index', array('articleid' => $nextArticle.id))}">{$nextArticle.title}</a></p>
+      {/if}
+      {if condition="$lastArticle neq null"}
+        <p>下一篇：<a href="{:url('Article/index', array('articleid' => $lastArticle.id))}">{$lastArticle.title}</a></p>
+      {/if}
+      </div>
+      {if condition="$relates neq null"}
+      <div class="otherlink">
+        <h2>相关文章</h2>
+        <ul>
+          {volist name="relates" id="vo"}
+          <li><a href="{:url('Article/index', array('articleid' => $vo.id))}" title="{$vo.title}">{$vo.title}</a></li>
+          {/volist}
+        </ul>
+      </div>
+      {/if}
+      <div class="comment-top" id="comment-top">
+        <div class="story">
+          <h4 class="stories "><span>评论 (<p id="num11" style="display:inline-block;">{$comment|count}</p>)</span></h4>
+        </div>
+        
+        {volist name="comment" id="vo" empty="$empty"}
+        <div class="comments-top-top">
+          <div class="top-comment-left">
+            <img class="img-responsive" src="__STYLE__/images/{$vo.photo}" alt="">
+          </div>
+          <div class="top-comment-right">
+            <div class="right-comment">
+              <h5>{$vo.name}</h5>
+              <span>{$vo.comment_time|date="Y-m-d H:i:s",###}</span>
+              <div class="clearfix"> </div>
             </div>
+            <p>{$vo.content}</p>
+          </div>
+          <div class="clearfix"> </div>
+        </div>
+        {/volist}
 
-        {include file="common/right" /}
-
-        {include file="common/footer" /}
-
-    
-
-    </body>
+      </div>
+      <div class="simply">
+        <div class="story">
+          <h4 class="stories stories-in"><span>填写评论</span></h4>
+        </div>
+        <form>
+          <input type="hidden" value="{$article.id}" id="articleid"/>
+          <div class="name">
+            <span class="sit-in">昵称:</span>
+            <input type="text" value="" placeholder="请输入昵称" id="name" oninput="checkname(this)">
+            <span id="hint11" style="color:red;margin-left:10px"></span>
+          </div>
+          <div class="name name-at">
+            <span class="sit-in">邮箱:</span>
+            <input type="text" value="" placeholder="请输入邮箱" id="email"  oninput="checkemail(this)">
+            <span id="hint12" style="color:red;margin-left:10px"></span>
+          </div>
+          <div class="name name-in">
+            <span class="sit-in">内容:</span>
+            <textarea id="content" oninput="checkcontent(this)"></textarea>
+            <span id="hint13" style="color:red;position: absolute;top: 20px;left: 295px;margin-left:10px"></span>
+          </div>
+          <input type="button" value="确定" onclick="comment()">
+        </form>
+        <div class="clearfix"> </div>
+      </div>
+      </div>
+  </article>
+  {include file="common/right" /}
+  <div class="clear"></div>
+  <!-- 清除浮动 --> 
+  {include file="common/footer" /}
+</div>
+<script src="__STYLE__/style/silder.js"></script>
+<script src="__STYLE__/style/mootools.js" type="text/javascript"></script>
+<script src="__STYLE__/style/animate.js" type="text/javascript"></script>
+{literal}
+<script type="text/javascript">
+    function click11(){
+        var click = document.getElementById("search-green").value;
+        window.location="/tp/public/index/search/index/keywords/"+click;
+    }
+    // 提交评论后能异步更新评论列表
+    function comment(){
+        var commentTop = document.getElementById("comment-top");
+        var name = document.getElementById("name");
+        var email = document.getElementById("email");
+        var content = document.getElementById("content");
+        var articleid = document.getElementById("articleid");
+        var photo = "photo/"+Math.ceil(Math.random()*6)+".jpg";
+        var num11 = commentTop.getElementById("num11");
+        var time = new Date();
+        if(checkname(name) && checkemail(email) && checkcontent(content)){
+          var xmlhttp = null;
+          xmlhttp = new window.XMLHttpRequest();
+          xmlhttp.open("GET","/tp/public/index/Article/comment.html?name="+name.value+"&email="+email.value+"&content="+content.value+"&articleid="+articleid.value+"&photo="+photo+"&time="+(Date.parse(time)/1000),true);
+          xmlhttp.send();
+          xmlhttp.onreadystatechange = function(){
+            if(xmlhttp.readyState == 4 && xmlhttp.status == 200){
+              var result = xmlhttp.responseText;
+                if(result == "true"){
+                  var div1 = document.createElement("div");
+                  var div2 = document.createElement("div");
+                  var div3 = document.createElement("div");
+                  var div31 = document.createElement("div");
+                  var div311 = document.createElement("div");
+                  var div4 = document.createElement("div");
+                  var img = document.createElement("img");
+                  var h5 = document.createElement("h5");
+                  var span = document.createElement("span");
+                  var p = document.createElement("p");
+                  div1.setAttribute("class","comments-top-top");
+                  div2.setAttribute("class","top-comment-left");
+                  div3.setAttribute("class","top-comment-right");
+                  div31.setAttribute("class","right-comment");
+                  div311.setAttribute("class","clearfix");
+                  div4.setAttribute("class","clearfix");
+                  img.setAttribute("class","img-responsive");
+                  img.setAttribute("src","http://localhost/tp/public/static/index/images/"+photo);
+                  h5.innerHTML = name.value;
+                  span.innerHTML = time.getFullYear()+"-"+(time.getMonth+1 < 10 ? '0'+(time.getMonth()+1) : time.getMonth()+1)+"-"+(time.getDate() < 10 ? '0'+time.getDate() : time.getDate())+" "+(time.getHours() < 10 ? '0'+time.getHours() : time.getHours())+":"+(time.getMinutes() < 10 ? '0'+time.getMinutes() : time.getMinutes())+":"+(time.getSeconds() < 10 ? '0'+time.getSeconds() : time.getSeconds());  // 设置显示时间样式
+                  p.innerHTML = content.value;
+                  div2.appendChild(img);
+                  div31.appendChild(h5);
+                  div31.appendChild(span);
+                  div31.appendChild(div311);
+                  div3.appendChild(div31);
+                  div3.appendChild(p);
+                  div1.appendChild(div2);
+                  div1.appendChild(div3);
+                  div1.appendChild(div4);
+                  if(document.getElementById("notdata")){
+                      commentTop.removeChild(document.getElementById("notdata"));
+                  }
+                  num11.innerHTML = parseInt(num11.innerHTML)+1;
+                  commentTop.appendChild(div1);
+                }
+            }
+          }
+        }
+    }
+    // 验证表单
+    function checkname(name){
+        var hint11 = document.getElementById("hint11");
+        if(name.value == ""){
+          hint11.innerHTML = "*昵称不能为空";
+          return false;
+        } else if(name.value.length > 25){
+          hint11.innerHTML = "*昵称不能超过25个字符";
+          return false;
+        } else {
+          hint11.innerHTML = "";
+          return true;
+        }
+    }
+    function checkemail(email){
+      var reg = /^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+(.[a-zA-Z0-9_-])+/;
+      var hint12 = document.getElementById("hint12");
+      if(email.value == ""){
+          hint12.innerHTML = "*邮箱不能为空";
+          return false;
+        } else if(!reg.test(email.value)){
+          hint12.innerHTML = "*邮箱格式有误,正确:123@123.com";
+          return false;
+        } else {
+          hint12.innerHTML = "";
+          return true;
+        }
+    }
+    function checkcontent(content){
+      var hint13 = document.getElementById("hint13");
+      if(content.value == ""){
+        hint13.innerHTML = "*内容不能为空";
+        return false;
+      } else {
+        hint13.innerHTML = "";
+        return true;
+      }
+    }
+</script>
+{/literal}
+</body>
 </html>

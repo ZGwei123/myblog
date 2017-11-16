@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:71:"E:\wamp64\www\tp5\public/../application/index\view\article\article.html";i:1509284892;s:69:"E:\wamp64\www\tp5\public/../application/index\view\common\header.html";i:1509283056;s:68:"E:\wamp64\www\tp5\public/../application/index\view\common\right.html";i:1509243759;s:69:"E:\wamp64\www\tp5\public/../application/index\view\common\footer.html";i:1506349480;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:71:"E:\wamp64\www\tp5\public/../application/index\view\article\article.html";i:1510045074;s:69:"E:\wamp64\www\tp5\public/../application/index\view\common\header.html";i:1509283056;s:68:"E:\wamp64\www\tp5\public/../application/index\view\common\right.html";i:1509243759;s:69:"E:\wamp64\www\tp5\public/../application/index\view\common\footer.html";i:1506349480;}*/ ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
@@ -6,6 +6,7 @@
         <title>童老师ThinkPHP交流群：484519446</title>
         <meta name="keywords" content="童老师ThinkPHP交流群：484519446" />
         <meta name="description" content="童老师ThinkPHP交流群：484519446" />
+        <meta name="viewport" content="width=device-width,inital-scale=1.0,maximum-scale=1.0" />
         <meta name="mobile-agent" content="format=html5; url=http://m.zx.wed114.cn/shenghuo/20160920156214.html" />
         <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7">
 		<link href="__STYLE__/style/lady.css" type="text/css" rel="stylesheet" />

@@ -8,7 +8,7 @@ class Links extends Validate{
 	protected $rule = [
 		"title" => "require",
 		"url" => "require",
-		"state" => "max:25"
+		"state" => "max:255"
 	];
 	// 返回验证失败原因
 	protected $message = [

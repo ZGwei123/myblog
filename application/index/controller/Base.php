@@ -9,6 +9,7 @@ class Base extends Controller{
 	function _initialize(){
 		$cates = db("cate")->select();  // 获取所有栏目信息
 		$tags = db("tags")->order("id desc")->limit(8)->select();   // 获取所有Tags标签信息;
+		$i = 0;
 		$this->assign([
 				"cates" => $cates,
 				"tags" => $tags,
@@ -20,10 +21,12 @@ class Base extends Controller{
 		$hotClick = db("article")->order("click desc")->limit(5)->select();  // 点击数前5的文章
 		// 点击数前5且有推荐的文章
 		$hotCommend = db("article")->where("state", "=", 1)->order("click desc")->limit(5)->select();
+		$links = db("links")->order("id desc")->limit(4)->select();  // 获取最新的5个友情链接
 		$this->assign(
 			array(
 					"hotClick" => $hotClick,
-					"hotCommend" => $hotCommend
+					"hotCommend" => $hotCommend,
+					"links" => $links,
 				));
 	}
 }

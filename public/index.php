@@ -15,6 +15,6 @@
 define('APP_PATH', __DIR__ . '/../application/');
 // 定义配置文件位置
 //define('CONF_PATH', __DIR__ . '/../conf/');
-define('__PUBLIC__',"http://localhost/tp5/public");
+define('__PUBLIC__',"http://localhost/tp/public");
 // 加载框架引导文件
 require __DIR__ . '/../thinkphp/start.php';
