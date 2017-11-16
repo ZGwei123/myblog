@@ -1,0 +1,55 @@
+---------------------------------------------------------------
+[ 2017-11-16T20:29:32+08:00 ] ::1 ::1 GET /tp/public/
+[ info ] localhost/tp/public/ [运行时间：2.536446s][吞吐率：0.39req/s] [内存消耗：4,731.04kb] [文件加载：54]
+[ info ] [ LANG ] E:\wamp64\www\tp\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => '__guid=111872281.4522908939233709000.1504714190963.7168; PHPSESSID=ogpf7ph4merr838ufjvl6qan22; monitor_count=11',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Index->index[ E:\wamp64\www\tp\application\index\controller\Index.php ]
+[ info ] [ VIEW ] E:\wamp64\www\tp\public/../application/index\view\index\index.html [ array (
+  0 => 'cates',
+  1 => 'tags',
+  2 => 'hotClick',
+  3 => 'hotCommend',
+  4 => 'links',
+  5 => 'articles',
+  6 => 'commentsum',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.454813s ] mysql:host=127.0.0.1;dbname=blog;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_cate` [ RunTime:0.710639s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_cate` [ RunTime:0.047533s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_tags` [ RunTime:0.002719s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_tags` ORDER BY id desc LIMIT 8 [ RunTime:0.021868s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_article` [ RunTime:0.002783s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_article` ORDER BY click desc LIMIT 5 [ RunTime:0.007848s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_article` WHERE  `state` = 1 ORDER BY click desc LIMIT 5 [ RunTime:0.026866s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_links` [ RunTime:0.003633s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_links` ORDER BY id desc LIMIT 4 [ RunTime:0.001604s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `tp_article` `a` INNER JOIN `tp_cate` `b` ON `a`.`cateid`=`b`.`id` LIMIT 1 [ RunTime:0.047062s ]
+[ sql ] [ SQL ] SELECT `a`.`id`,`a`.`title`,`a`.`author`,`a`.`synopsis`,`a`.`keywords`,`a`.`content`,`a`.`pic`,`a`.`click`,`a`.`state`,`a`.`time`,`a`.`cateid`,`b`.`id` AS `cate_id`,`b`.`catename` FROM `tp_article` `a` INNER JOIN `tp_cate` `b` ON `a`.`cateid`=`b`.`id` ORDER BY a.id desc LIMIT 0,5 [ RunTime:0.003961s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_comment` [ RunTime:0.002159s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_comment` WHERE  `articleid` = 8 [ RunTime:0.001890s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_comment` WHERE  `articleid` = 7 [ RunTime:0.001183s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_comment` WHERE  `articleid` = 6 [ RunTime:0.001655s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_comment` WHERE  `articleid` = 5 [ RunTime:0.001678s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_comment` WHERE  `articleid` = 4 [ RunTime:0.002214s ]
